@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
         const relapsed = new Date();
         relapsed.setFullYear(2023);
         relapsed.setMonth(8); // Aug
-        relapsed.setDate(8); // 8th
+        relapsed.setDate(7); // 7th
         relapsed.setHours(23); // 11 pm
         relapsed.setMinutes(50); // 50 min
         relapsed.setSeconds(0); // 0 sec
@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
         const seconds = Math.floor((milliseconds - minutes*60000 - hours*3600000 - days*86400000) / 1000);
 
         //get current date and time
-        const timeElapsed = days+32 + " day(s), " + hours + " hour(s), " + minutes + " minute(s), and " + seconds + " seconds.";
+        const timeElapsed = days+31 + " day(s), " + hours + " hour(s), " + minutes + " minute(s), and " + seconds + " seconds.";
 
         //print current date and time to the DOM
         document.getElementById("time-elapsed").innerHTML = timeElapsed;
