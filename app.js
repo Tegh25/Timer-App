@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     function clock() {
         const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-        const today = Date.now();
+        const today = changeTimezone(new Date(Date.now()), 'America/Toronto');
         const relapsed = new Date();
         relapsed.setFullYear(2023);
         relapsed.setMonth(8); // Aug
@@ -25,5 +25,22 @@ window.addEventListener("load", () => {
         //print current date and time to the DOM
         document.getElementById("time-elapsed").innerHTML = timeElapsed;
         setTimeout(clock, 1000);
+    }
+
+    // https://stackoverflow.com/questions/15141762/how-to-initialize-a-javascript-date-to-a-particular-time-zone
+    function changeTimezone(date, ianatz) {
+      // suppose the date is 12:00 UTC
+      var invdate = new Date(
+        date.toLocaleString('en-US', {
+          timeZone: ianatz,
+        })
+      );
+
+      // then invdate will be 07:00 in Toronto
+      // and the diff is 5 hours
+      var diff = date.getTime() - invdate.getTime();
+
+      // so 12:00 in Toronto is 17:00 UTC
+      return new Date(date.getTime() - diff); // needs to substract
     }
 });
