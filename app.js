@@ -5,12 +5,12 @@ window.addEventListener("load", () => {
 
         const today = changeTimezone(new Date(Date.now()), 'America/Toronto');
         const relapsed = new Date();
-        relapsed.setFullYear(2023);
-        relapsed.setMonth(8); // Aug
-        relapsed.setDate(7); // 7th
-        relapsed.setHours(23); // 11 pm
-        relapsed.setMinutes(50); // 50 min
-        relapsed.setSeconds(0); // 0 sec
+        relapsed.setFullYear(2025);
+        relapsed.setMonth(3); // Mar
+        relapsed.setDate(15); // 15th
+        relapsed.setHours(19); // 7 pm
+        relapsed.setMinutes(30); // 30 min
+        relapsed.setSeconds(1); // 1 sec
 
         const milliseconds = (today - relapsed.getTime());
 
